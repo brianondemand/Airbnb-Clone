@@ -107,7 +107,7 @@ const AuthModal = ({
         onSubmit={handleSubmit(onSubmit)}
       >
         <Heading
-          title={!isLoginModal ? "Welcome to Airbnb" : "Welcome back"}
+          title={!isLoginModal ? "Welcome to BValley" : "Welcome back"}
           subtitle={
             title === "Sign up"
               ? "Create an account!"

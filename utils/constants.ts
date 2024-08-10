@@ -2,16 +2,16 @@ import { TbBeach, TbMountain, TbPool } from "react-icons/tb";
 import {
   GiBarn,
   GiBoatFishing,
-  GiCactus,
   GiCastle,
   GiCaveEntrance,
+  GiFamilyHouse,
   GiForestCamp,
   GiIsland,
-  GiWindmill,
+  GiModernCity,
+  GiTreehouse,
 } from "react-icons/gi";
-import { FaSkiing } from "react-icons/fa";
-import { BsSnow } from "react-icons/bs";
-import { IoDiamond } from "react-icons/io5";
+import { FaFireAlt, FaSkiing } from "react-icons/fa";
+import { IoDiamondOutline } from "react-icons/io5";
 import { MdOutlineVilla } from "react-icons/md";
 
 export const categories = [
@@ -21,9 +21,9 @@ export const categories = [
     description: "This property is close to the beach!",
   },
   {
-    label: "Windmills",
-    icon: GiWindmill,
-    description: "This property has a windmills!",
+    label: "Trending",
+    icon: FaFireAlt,
+    description: "This property is trending!",
   },
   {
     label: "Modern",
@@ -46,19 +46,19 @@ export const categories = [
     description: "This property is on an island!",
   },
   {
-    label: "Lake",
+    label: "Lakefront",
     icon: GiBoatFishing,
     description: "This property is near a lake!",
   },
   {
-    label: "Skiing",
-    icon: FaSkiing,
-    description: "This property has skiing activies!",
+    label: "Top Cities",
+    icon: GiModernCity,
+    description: "This property is in a top city!",
   },
   {
     label: "Castles",
     icon: GiCastle,
-    description: "This property is an ancient castle!",
+    description: "This property is a big castle!",
   },
   {
     label: "Caves",
@@ -71,14 +71,14 @@ export const categories = [
     description: "This property offers camping activities!",
   },
   {
-    label: "Arctic",
-    icon: BsSnow,
-    description: "This property is in arctic environment!",
+    label: "Mansions",
+    icon: GiFamilyHouse,
+    description: "This property is a mansion!",
   },
   {
-    label: "Desert",
-    icon: GiCactus,
-    description: "This property is in the desert!",
+    label: "Treehouses",
+    icon: GiTreehouse,
+    description: "This property is in the tree top!",
   },
   {
     label: "Barns",
@@ -86,8 +86,8 @@ export const categories = [
     description: "This property is in a barn!",
   },
   {
-    label: "Lux",
-    icon: IoDiamond,
+    label: "Luxury",
+    icon: IoDiamondOutline,
     description: "This property is brand new and luxurious!",
   },
 ];

@@ -258,7 +258,7 @@ const RentModal = ({ onCloseModal }: { onCloseModal?: () => void }) => {
 
   return (
     <div className="w-full h-full flex flex-col">
-      <Modal.WindowHeader title="Share your home!" />
+      <Modal.WindowHeader title="Rent your home!" />
       <form
         className="flex-1  md:h-auto border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none "
         onSubmit={handleSubmit(onSubmit)}
