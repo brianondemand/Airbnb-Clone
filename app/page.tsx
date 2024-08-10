@@ -15,7 +15,7 @@ const Home: FC<HomeProps> = async ({ searchParams }) => {
   const { listings } = await getListings(searchParams);
   const favorites = await getFavorites();
 
-  console.log("Listings data:", listings); // Debugging: Log the listings data
+  console.log("Fetched listings:", listings); // Log the fetched listings again
 
   if (!listings || listings.length === 0) {
     return (
@@ -28,8 +28,10 @@ const Home: FC<HomeProps> = async ({ searchParams }) => {
 
   return (
     <section className="main-container pt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-8">
-      {listings.map((listing) => {
+      {listings.map((listing, index) => {
         const hasFavorited = favorites.includes(listing.id);
+        console.log(`Rendering listing ${index + 1}:`, listing); // Log each rendered listing
+
         return (
           <ListingCard
             key={listing.id}

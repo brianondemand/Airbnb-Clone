@@ -26,14 +26,14 @@ const ListingCard: React.FC<ListingCardProps> = ({
   hasFavorited,
 }) => {
   const price = reservation ? reservation.totalPrice : data?.price;
-  console.log('Rendering ListingCard:', data.id);
+  // console.log('Rendering ListingCard:', data.id);
   let reservationDate;
   if (reservation) {
     const start = new Date(reservation.startDate);
     const end = new Date(reservation.endDate);
     reservationDate = `${format(start, "PP")} - ${format(end, "PP")}`;
   }
-  console.log('Listing data:', data);
+  // console.log('Listing data:', data);
   return (
     <div className="relative">
       <div className="absolute top-0 left-0 p-3 flex items-center justify-between w-full">
