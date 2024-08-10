@@ -82,7 +82,7 @@ export const getListings = async (query?: {
     }
 
     const listings = await db.listing.findMany(filterQuery);
-    console.log('Fetched listings:', listings);
+
     const nextCursor =
       listings.length === LISTINGS_BATCH
         ? listings[LISTINGS_BATCH - 1].id
