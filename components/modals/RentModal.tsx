@@ -5,7 +5,7 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
-import { BiDollar } from "react-icons/bi";
+import { PiMoneyWavy } from "react-icons/pi";
 
 import Modal from "./Modal";
 import Button from "../Button";
@@ -219,7 +219,7 @@ const RentModal = ({ onCloseModal }: { onCloseModal?: () => void }) => {
               key="price"
               id="price"
               label="Price"
-              icon={BiDollar}
+              icon={PiMoneyWavy}
               type="number"
               disabled={isLoading}
               register={register}

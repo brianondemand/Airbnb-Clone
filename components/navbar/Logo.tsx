@@ -6,9 +6,10 @@ const Logo = () => {
   return (
     <Link href="/" className="h-[35px] w-[150px] relative hidden md:block ">
       <Image
-        src="/images/logo.png"
+        src="/images/vacationhub.png"
         alt="logo"
-        object-contain
+        fill
+        sizes="150px"
         priority
       />
     </Link>
