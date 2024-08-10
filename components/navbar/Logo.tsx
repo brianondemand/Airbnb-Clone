@@ -9,7 +9,7 @@ const Logo = () => {
         src="/images/logo.png"
         alt="logo"
         object-contain
-        sizes="50px"
+        sizes="40px"
         priority
       />
     </Link>

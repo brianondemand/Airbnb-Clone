@@ -74,14 +74,14 @@ const AuthModal = ({
             throw new Error(callback.error);
           }
           if (callback?.ok) {
-            toast.success("You've successfully logged in.");
+            toast.success("Logged in.");
             onCloseModal?.();
             router.refresh();
           }
         } else {
           await registerUser({ email, password, name });
           setTitle("Login");
-          toast.success("You've successfully registered.");
+          toast.success("Registation successfull. Login");
           reset();
         }
       } catch (error: any) {
