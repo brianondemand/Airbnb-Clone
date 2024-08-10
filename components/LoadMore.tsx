@@ -3,7 +3,7 @@
 import React, { FC, useState, useEffect } from "react";
 import { Listing } from "@prisma/client";
 import { useQuery } from "@tanstack/react-query";
-import ListingCard from "./ListingCard";
+import ListingCard, { ListingSkeleton } from "./ListingCard";
 
 interface LoadMoreProps {
   fnArgs?: { [key: string]: string | undefined };
@@ -64,8 +64,14 @@ const LoadMore: FC<LoadMoreProps> = ({
           );
         }
       )}
-      {isLoading}
-      {/* {isError && (
+      {isLoading && (
+        <>
+          {Array.from({ length: 4 }).map((_item: any, i: number) => (
+            <ListingSkeleton key={i} />
+          ))}
+        </>
+      )}
+      {isError && (
         <p className="text-xl mt-8 text-center font-semibold">
           Something went wrong!
         </p>
@@ -77,7 +83,7 @@ const LoadMore: FC<LoadMoreProps> = ({
         >
           Load More
         </button>
-      )} */}
+      )}
     </>
   );
 };
