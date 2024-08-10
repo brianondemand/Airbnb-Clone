@@ -76,7 +76,7 @@ export const categories = [
     description: "This property is a mansion!",
   },
   {
-    label: "Treehouses",
+    label: "Tree Houses",
     icon: GiTreehouse,
     description: "This property is in the tree top!",
   },

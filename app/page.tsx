@@ -1,9 +1,7 @@
 import React, { FC, Suspense } from "react";
-
 import ListingCard from "@/components/ListingCard";
 import LoadMore from "@/components/LoadMore";
 import EmptyState from "@/components/EmptyState";
-
 import { getListings } from "@/services/listing";
 import { getFavorites } from "@/services/favorite";
 
@@ -17,6 +15,8 @@ const Home: FC<HomeProps> = async ({ searchParams }) => {
   const { listings } = await getListings(searchParams);
   const favorites = await getFavorites();
 
+  console.log("Listings data:", listings); // Debugging: Log the listings data
+
   if (!listings || listings.length === 0) {
     return (
       <EmptyState
@@ -27,7 +27,7 @@ const Home: FC<HomeProps> = async ({ searchParams }) => {
   }
 
   return (
-    <section className=" main-container pt-16 grid  grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-8">
+    <section className="main-container pt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-8">
       {listings.map((listing) => {
         const hasFavorited = favorites.includes(listing.id);
         return (

@@ -8,11 +8,10 @@ const Logo = () => {
       <Image
         src="/images/logo.png"
         alt="logo"
-        fill
-        sizes="150px"
+        object-contain
+        sizes="90px"
         priority
       />
-      Bnb Valley
     </Link>
   );
 };
