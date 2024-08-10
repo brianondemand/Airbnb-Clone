@@ -8,7 +8,7 @@ import Providers from "@/components/Provider";
 const nunito = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "BnbValley",
+  title: "Bnb Valley",
   description:
     "Your Ultimate Destination Connection",
 };

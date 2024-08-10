@@ -9,7 +9,7 @@ const Logo = () => {
         src="/images/vacationhub.png"
         alt="logo"
         fill
-        sizes="150px"
+        sizes="300px"
         priority
       />
     </Link>
