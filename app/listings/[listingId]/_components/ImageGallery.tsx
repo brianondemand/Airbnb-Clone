@@ -25,7 +25,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
           src={images[0].image}
           alt={title}
           layout="fill"
-          objectFit="cover"
+          objectFit="contain"
           loading="lazy"
           className="transition-transform duration-300 hover:scale-105"
         />
