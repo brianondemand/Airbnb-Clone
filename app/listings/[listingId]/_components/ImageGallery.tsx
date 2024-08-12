@@ -18,15 +18,21 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
   const images = Array(5).fill({ image });
 
   return (
-    <>
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: '3fr 2fr', // Increase the width of the left side
+      gap: '10px',
+      width: '100%',
+      height: '100%',
+    }}>
       {/* Left side: Single larger image with rounded left side */}
       <div style={{
         position: 'relative',
         width: '100%',
-        height: '100%', // Adjust height to fit parent container
+        height: '600px', // Maintain a reasonable height
         borderRadius: '16px 0 0 16px', // Rounded left side only
         overflow: 'hidden', // Ensure the image fits within the rounded borders
-        gridColumn: '1 / 2', // Ensure it spans the left column
+        gridColumn: '1 / 2',
       }}>
         <Image
           src={images[0].image}
@@ -42,10 +48,8 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
         display: 'grid',
         gridTemplateColumns: '1fr 1fr', // Two smaller columns
         gap: '6px', // Reduce gap to fit images
-        alignContent: 'start',
-        gridColumn: '2 / 3', // Ensure it spans the right column
-        width: '100%', // Adjust width to fit parent container
-        height: '100%', // Adjust height to fit parent container
+        gridColumn: '2 / 3',
+        height: '600px', // Match the height of the left side
       }}>
         {images.slice(1).map((item, index) => {
           const borderRadius = index === 1 
@@ -53,12 +57,12 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
             : index === 3
             ? '0 0 16px 0' // Bottom-right corner of the last column
             : '0'; // No rounding for other images
-
+            
           return (
             <div key={index} style={{
               position: 'relative',
               width: '100%',
-              height: '100%', // Adjust height to fit parent container
+              height: '50%', // Adjust to fit within the grid layout
               borderRadius: borderRadius, // Apply rounded borders conditionally
               overflow: 'hidden', // Ensure the image fits within the rounded borders
             }}>
@@ -73,7 +77,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 
