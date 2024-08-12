@@ -18,60 +18,37 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
   const images = Array(5).fill({ image });
 
   return (
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: '3fr 2fr', // Increase the width of the left side
-      gap: '8px', // Reduced gap between images
-      width: '100%',
-      height: '100%',
-    }}>
+    <div className="grid grid-cols-[3fr_2fr] gap-2 w-full h-full">
       {/* Left side: Single larger image with rounded left side */}
-      <div style={{
-        position: 'relative',
-        width: '100%',
-        height: '600px', // Maintain a reasonable height
-        borderRadius: '16px 0 0 16px', // Rounded left side only
-        overflow: 'hidden', // Ensure the image fits within the rounded borders
-        gridColumn: '1 / 2',
-      }}>
+      <div className="relative w-full h-[600px] rounded-l-lg overflow-hidden col-span-1">
         <Image
           src={images[0].image}
           alt={title}
           layout="fill"
           objectFit="cover"
           loading="lazy"
+          className="transition-transform duration-300 hover:scale-105"
         />
       </div>
       
       {/* Right side: Smaller images in grid */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr', // Two smaller columns
-        gap: '6px', // Reduced gap between images
-        gridColumn: '2 / 3',
-        height: '600px', // Match the height of the left side
-      }}>
+      <div className="grid grid-cols-2 gap-2 h-[600px] col-span-1">
         {images.slice(1).map((item, index) => {
           const borderRadius = index === 1 
-            ? '0 16px 0 0' // Top-right corner of the last column
+            ? 'rounded-tr-lg' // Top-right corner of the last column
             : index === 3
-            ? '0 0 16px 0' // Bottom-right corner of the last column
-            : '0'; // No rounding for other images
+            ? 'rounded-br-lg' // Bottom-right corner of the last column
+            : ''; // No rounding for other images
             
           return (
-            <div key={index} style={{
-              position: 'relative',
-              width: '100%',
-              height: '100%',
-              borderRadius: borderRadius,
-              overflow: 'hidden', 
-            }}>
+            <div key={index} className={`relative w-full h-full overflow-hidden ${borderRadius}`}>
               <Image
                 src={item.image}
                 alt={title}
                 layout="fill"
                 objectFit="contain"
                 loading="lazy"
+                className="transition-transform duration-300 hover:scale-105"
               />
             </div>
           );
