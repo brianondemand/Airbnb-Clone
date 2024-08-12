@@ -70,7 +70,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
                 src={item.image}
                 alt={title}
                 layout="fill"
-                objectFit="cover"
+                objectFit="contain"
                 loading="lazy"
               />
             </div>
