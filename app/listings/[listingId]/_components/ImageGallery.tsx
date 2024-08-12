@@ -6,7 +6,7 @@ interface ImageGalleryProps {
   title: string;
   image: string;
   id: string;
-  itemData?: { image: string }[]; // Make itemData optional
+  itemData?: { image: string }[]; // Optional
 }
 
 // ImageGallery Component
@@ -14,9 +14,10 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
   title,
   image,
   id,
-  itemData = [], // Default to an empty array if no itemData is provided
+  itemData = [], // Default to empty array
 }) => {
-  const images = itemData.length ? itemData : [{ image }]; // Use provided images or fallback to single image
+  // Create an array with 5 copies of the single image
+  const images = Array(5).fill({ image });
 
   return (
     <div style={{

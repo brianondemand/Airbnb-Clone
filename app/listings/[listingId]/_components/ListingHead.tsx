@@ -32,11 +32,11 @@ const ListingHead: React.FC<ListingHeadProps> = async ({
           title={title}
           image={image}
           id={id}
-          itemData={[{ image }]} // Pass the single image as itemData
+          // Optionally, pass itemData if needed
         />
 
         <div className="absolute top-5 right-5">
-          {/* <HeartButton listingId={id} hasFavorited={hasFavorited} /> */}
+          <HeartButton listingId={id} hasFavorited={hasFavorited} />
         </div>
       </div>
     </>
