@@ -27,7 +27,7 @@ const ListingHead: React.FC<ListingHeadProps> = async ({
       <Heading title={title} subtitle={`${region}, ${country}`} backBtn />
           <HeartButton listingId={id} hasFavorited={hasFavorited} />
       <div
-        className={`w-full md:h-[420px] sm:h-[280px] bg-gray-100 h-[260px] overflow-hidden rounded-xl relative transition duration-300`}
+        className={`w-full md:h-[450px] sm:h-[300px] bg-gray-100 h-[260px] overflow-hidden rounded-xl relative transition duration-300`}
       >
         <ImageGallery
           title={title}
