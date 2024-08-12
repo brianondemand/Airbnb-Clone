@@ -4,6 +4,8 @@ import dynamic from "next/dynamic";
 import Avatar from "@/components/Avatar";
 import ListingCategory from "./ListingCategory";
 import { Category } from "@/types";
+import Offers from "@/components/Offers";
+import BedRooms from "@/components/BedRooms";
 
 interface ListingInfoProps {
   user: {
@@ -56,8 +58,24 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
         />
       )}
       <hr />
-      <p className=" font-light text-neutral-500 text-[16px] ">{description}</p>
+      <div className="flex flex-col">
+        <p className="text-4xl font-bold text-[#FF5A5F]">
+          air<span className="text-black">cover</span>
+        </p>
+        <p className="text-neutral-500 pt-3">
+          Every booking includes free protection from Host cancellations,
+          listing inaccuracies, and other issues like trouble checking in.
+        </p>
+        <p className="text-black font-bold underline pt-3 cursor-pointer">
+          Learn more
+        </p>
+      </div>
       <hr />
+      <p className="text-lg font-light text-neutral-500">{description}</p>
+      <hr />
+      <BedRooms />
+      <hr />
+      <Offers />
       <div className="h-[210px]">
         <Map center={latlng} />
       </div>
