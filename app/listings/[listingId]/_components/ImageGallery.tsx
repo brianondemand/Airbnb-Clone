@@ -47,7 +47,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
       <div style={{
         display: 'grid',
         gridTemplateColumns: '1fr 1fr', // Two smaller columns
-        gap: '8px', // Reduced gap between images
+        gap: '2px', // Reduced gap between images
         gridColumn: '2 / 3',
         height: '600px', // Match the height of the left side
       }}>
