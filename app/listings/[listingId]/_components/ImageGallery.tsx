@@ -21,7 +21,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
     <div style={{
       display: 'grid',
       gridTemplateColumns: '3fr 2fr', // Increase the width of the left side
-      gap: '10px',
+      gap: '8px', // Reduced gap between images
       width: '100%',
       height: '100%',
     }}>
@@ -47,7 +47,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
       <div style={{
         display: 'grid',
         gridTemplateColumns: '1fr 1fr', // Two smaller columns
-        gap: '6px', // Reduce gap to fit images
+        gap: '8px', // Reduced gap between images
         gridColumn: '2 / 3',
         height: '600px', // Match the height of the left side
       }}>
@@ -62,7 +62,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
             <div key={index} style={{
               position: 'relative',
               width: '100%',
-              height: '50%', // Adjust to fit within the grid layout
+              height: '50%', // Adjust height to fit within the grid layout
               borderRadius: borderRadius, // Apply rounded borders conditionally
               overflow: 'hidden', // Ensure the image fits within the rounded borders
             }}>
