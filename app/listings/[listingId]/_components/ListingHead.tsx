@@ -1,5 +1,5 @@
 import React from "react";
-import ImageGallery from "@/app/listings/[listingId]/_components/ImageGallery"; // Updated import
+import ImageGallery from "@/app/listings/[listingId]/_components/ImageGallery";
 import Heading from "@/components/Heading";
 import HeartButton from "@/components/HeartButton";
 import { getFavorites } from "@/services/favorite";
@@ -25,19 +25,17 @@ const ListingHead: React.FC<ListingHeadProps> = async ({
   return (
     <>
       <Heading title={title} subtitle={`${region}, ${country}`} backBtn />
+      <div className="absolute top-5 right-5">
+          <HeartButton listingId={id} hasFavorited={hasFavorited} />
+        </div>
       <div
-        className={`w-full md:h-[420px] sm:h-[280px] bg-gray-100 h-[260px] overflow-hidden  rounded-xl relative transition duration-300`}
+        className={`w-full md:h-[420px] sm:h-[280px] bg-gray-100 h-[260px] overflow-hidden rounded-xl relative transition duration-300`}
       >
         <ImageGallery
           title={title}
           image={image}
           id={id}
-          // Optionally, pass itemData if needed
         />
-
-        <div className="absolute top-5 right-5">
-          <HeartButton listingId={id} hasFavorited={hasFavorited} />
-        </div>
       </div>
     </>
   );
